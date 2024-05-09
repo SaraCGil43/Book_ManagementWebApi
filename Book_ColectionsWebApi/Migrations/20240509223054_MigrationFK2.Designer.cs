@@ -3,6 +3,7 @@ using Book_ColectionsWebApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Book_ColectionsWebApi.Migrations
 {
     [DbContext(typeof(DBContextWebApiBooks))]
-    partial class DBContextWebApiBooksModelSnapshot : ModelSnapshot
+    [Migration("20240509223054_MigrationFK2")]
+    partial class MigrationFK2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

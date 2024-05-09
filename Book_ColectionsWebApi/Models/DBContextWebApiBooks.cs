@@ -15,21 +15,6 @@ namespace Book_ColectionsWebApi.Models
             modelBuilder.Entity<Review>(b =>
             {
                 b.HasKey(r => r.Id); // Definir la clave principal
-
-                b.HasOne<Book>("Book")
-                    .WithMany()
-                    .HasForeignKey("BookId")
-                    .OnDelete(DeleteBehavior.Restrict)
-                    .IsRequired();
-
-                b.HasOne<User>("User")
-                    .WithMany()
-                    .HasForeignKey("UserId")
-                    .OnDelete(DeleteBehavior.Restrict)
-                    .IsRequired();
-
-                b.Navigation("Book");
-                b.Navigation("User");
             });
         }
 
